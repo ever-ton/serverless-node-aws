@@ -3,19 +3,17 @@ const express = require("express");
  
 const app = express();
  
-app.get("/sum", (req, res) => {
-
-  let a = req.query.a
-  let b = req.query.b
-
-  const result = parseFloat(a) + parseFloat(b)
-
+app.get("/user", (req, res) => {
   res.json({
-    result: result
+    message: "user route"
   });
 });
  
-
+app.get("/catalog", (req, res) => {
+  res.json({
+    message: "catalog route"
+  });
+});
  
 const server = awsServerlessExpress.createServer(app);
  
